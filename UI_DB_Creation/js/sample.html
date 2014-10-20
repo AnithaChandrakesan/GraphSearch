@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Page Title</title>
+    <script src="../js/libs/jquery.min.js"></script>
+    <script>
+        function renderData() {
+            console.log("render called");
+        var obj = { 'players': [
+            { 'fname': 'joe', 'lname': 'smith', 'number': '34' },
+            { 'fname': 'jim', 'lname': 'jones', 'number': '12' },
+            { 'fname': 'jack', 'lname': 'Hoff', 'number': '84' } 
+            ] };
+//console.log("obj",obj);
+        var cols = GetHeaders(obj);
+       // console.log("cols in renders",cols);
+
+        data(obj,cols);
+      //  $('#Output').html(CreateTable(obj, cols));
+        //console.log("table",table);
+    }
+
+    
+    function data(obj,cols)
+    {
+        console.log("inside data");
+        var table = document.getElementById("outputTable");
+    
+    
+    
+        for (var j = 0; j < obj.players.length; j++) {
+            var rowCount = table.rows.length;
+    console.log("rowcount",rowCount);
+    var row = table.insertRow(rowCount);
+    console.log("row",row);
+            var player = obj.players[j];
+            console.log("create table ]",player);
+            console.log("j",j);
+            for (var k = 0; k < cols.length; k++) {
+                var columnName = cols[k];
+                console.log("k",k);
+                 row.insertCell(k).innerHTML = player[columnName];
+                console.log("create table player[columnName]",player[columnName]);
+            }
+    }
+    }
+    //
+    //function CreateTable(obj, cols) {
+    //    console.log("inside create table");
+    //    var table = $('<table></table>');
+    //    var th = $('<tr></tr>');
+    //    for (var i = 0; i < cols.length; i++) {
+    //        console.log("create table col[i]",cols[i]);
+    //        th.append('<th>' + cols[i] + '</th>');
+    //    }
+    //    table.append(th);
+    //
+    //    for (var j = 0; j < obj.players.length; j++) {
+    //        var player = obj.players[j];
+    //        console.log("create table ]",player);
+    //        var tr = $('<tr></tr>');
+    //        for (var k = 0; k < cols.length; k++) {
+    //            var columnName = cols[k];
+    //            tr.append('<td>' + player[columnName] + '</td>');
+    //            console.log("create table player[columnName]",player[columnName]);
+    //        }
+    //        table.append(tr);
+    //    }
+    //    
+    //    //console.log("table",table);
+    //    return table;
+    //}
+
+    
+        function GetHeaders(obj) {
+            console.log("get called");
+            console.log("obj",obj);
+        var cols = new Array();
+        var p = obj.players[0];
+        for (var key in p) {
+           
+            cols.push(key);
+            console.log("cols",cols);
+        }
+        
+        
+        console.log("inside header");
+        var table = document.getElementById("outputTable");
+    var rowCount = table.rows.length;
+    console.log("rowcount",rowCount);
+    var row = table.insertRow(rowCount);
+    console.log("row",row);
+    for (var i = 0; i < cols.length; i++) {
+        row.insertCell(i).innerHTML = cols[i];
+        }
+        
+        return cols;
+    }
+
+
+
+
+    </script>
+    <style>
+        
+        {
+            
+        }
+    </style>
+</head>
+<body onload="renderData();">
+
+<div id="output">
+<table id="outputTable"  border="1" cellpadding="2">
+    
+</table>
+</div>
+
+
+</body>
+</html>
