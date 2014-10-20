@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Graph Search</title>
+    <link rel='stylesheet' href='css/graphsearch.css' />
+    <script src='js/server.js'></script>
+    <script src='js/makedom.js'></script>
+    <script src='js/graph_search.js'></script>
+</head>
+
+<body>
+<div align='center'>
+    <input id='gs_input' />
+</div>
+</body>
+<script>
+
+//var gs_url='http://analytics01.cricket.net/awsem/services/factordb/graph/gs?gdb=crgr&vdb=ctype&rdb=cstat&uid=fcroot&pp=e9be674f29a948e6aef1fbc648206146';
+var gs_url='http://analyze.formcept.com/awsem/services/factordb/graph/gs?gdb=crictest&vdb=crictesttype&rdb=crictestrel&from=0&size=30&uid=test&pp=06d81d798ab441dd964a61ff3945a917';
+
+
+var g=new graphSearch({
+	url:gs_url,
+	parent:document.getElementById('gs_input'),
+	onSearch:function(a){
+		
+		
+	}
+	
+	});
+</script>
+</html>
