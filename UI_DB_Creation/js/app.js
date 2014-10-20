@@ -438,10 +438,7 @@ function DBdata(obj,cols)
         var cols = new Array();
         var p = obj[0];
         for (var key in p) {
-            //console.log("inside for");
-            //console.log("p",p);
-            //console.log("key",key);
-            //alert(' name=' + key + ' value=' + p[key]);
+           
             cols.push(key);
             console.log("cols",cols);
         }
