@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" ng-app="GS">
+<head>	
+	<title>Angular js </title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/common.css">	
+	<script src="js/libs/jquery.min.js"></script>
+	<script src="js/libs/jquery-ui.min.js"></script>
+	<script src="js/libs/bootstrap.min.js"></script>
+	<script src="js/libs/angular.min.js"></script>
+	<script src="js/d3.js"></script>
+	<script src="js/app_ani.js"></script>
+	<script src="js/server_ani.js"></script>
+	
+	<script>
+		function clear(elementID)
+		{
+			console.log("inside clear");
+		  document.getElementById(elementID).innerHTML="";
+		}
+	</script>
+	
+</head>
+
+<body ng-controller="GSCtrl" ng-init="getall();render();clearone()"  >
+	<div class="container"  id="playground">
+		
+		<div classs="container-fluid">
+			<div class="row">
+					
+			<div  class="col-xs-7" id="svgVisualize"></div>
+			
+			</div>
+			
+		
+		</div>
+	</div>
+							
+		
+		
+	
+	
+</body>
+</html>
